@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { User } from "@supabase/supabase-js";
 import { createClient } from "@/lib/supabase/client";
@@ -62,9 +63,14 @@ export function AdminNav({ user, profile }: AdminNavProps) {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-6">
             <Link href="/admin" className="flex items-center gap-2">
-              <span className="text-xl font-bold text-primary">
-                Roots Admin
-              </span>
+              <Image
+                src="/logo.png"
+                alt="Roots Collective"
+                width={36}
+                height={36}
+                className="dark:invert"
+              />
+              <span className="text-xl font-bold hidden sm:inline">Roots Admin</span>
             </Link>
             <nav className="hidden md:flex items-center gap-1">
               {navItems.map((item) => {

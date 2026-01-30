@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { CalendarDays, Users, CreditCard } from "lucide-react";
@@ -9,8 +10,15 @@ export default function Home() {
       {/* Header */}
       <header className="border-b">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold text-primary">
-            Roots Collective
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src="/logo.png"
+              alt="Roots Collective"
+              width={40}
+              height={40}
+              className="dark:invert"
+            />
+            <span className="text-xl font-bold hidden sm:inline">Roots Collective</span>
           </Link>
           <div className="flex items-center gap-4">
             <ThemeToggle />
