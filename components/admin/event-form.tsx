@@ -165,7 +165,12 @@ export function EventForm({ event, mode }: EventFormProps) {
               <Calendar
                 mode="single"
                 selected={selectedDate}
-                onSelect={setSelectedDate}
+                onSelect={(date) => {
+                  setSelectedDate(date);
+                  if (date) {
+                    form.setValue("date", date.toISOString());
+                  }
+                }}
                 initialFocus
               />
             </PopoverContent>
